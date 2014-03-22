@@ -1,4 +1,2 @@
-! Build samples
-
-
-=================
+! Build sample on Python
+========================
