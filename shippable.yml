@@ -5,21 +5,21 @@ language: python
 before_install:
   - export FOO=1234
   - export BAZ=567
-  - echo ----- $BAZ
-  - echo ------ $FOO
+  - echo B----- $BAZ
+  - echo F------ $FOO
   
 install:
-  - echo ==== $BAZ
-  - echo ===== $FOO
+  - echo B==== $BAZ
+  - echo F==== $FOO
   - pip install --use-mirrors -r requirements.txt
 before_script: 
   - mkdir -p shippable/codecoverage shippable/testresults
   - export BAZ=456
-  - echo ---- $BAZ
-  
+  - echo B---- $BAZ
+  - echo F---- $FOO
 script: 
-  - echo --- $FOO
-  - echo ----- $BAZ
+  - echo B----- $BAZ
+  - echo F-- $FOO
   - nosetests python/sample.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - coverage run --branch python/sample.py
   - coverage xml -o shippable/codecoverage/coverage.xml python/sample.py
