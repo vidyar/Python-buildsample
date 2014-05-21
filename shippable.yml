@@ -1,20 +1,25 @@
 python:
   - "2.7"
 language: python
+
+before_install:
+  - export FOO=1234
+  - export BAZ=567
+  - echo ----- $BAZ
+  - echo ------ $FOO
+  
+install:
+  - echo ==== $BAZ
+  - echo ===== $FOO
+  - pip install --use-mirrors -r requirements.txt
 before_script: 
   - mkdir -p shippable/codecoverage shippable/testresults
   - export BAZ=456
   - echo ---- $BAZ
-
-before_install:
-  - export FOO=1234
-  - echo ----- $BAZ
-  - echo ------ $FOO
   
-install: pip install --use-mirrors -r requirements.txt
 script: 
   - echo --- $FOO
-  - echo -----$ BAZ
+  - echo ----- $BAZ
   - nosetests python/sample.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - coverage run --branch python/sample.py
   - coverage xml -o shippable/codecoverage/coverage.xml python/sample.py
