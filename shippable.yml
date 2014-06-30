@@ -25,6 +25,13 @@ script:
   - nosetests python/sample.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - coverage run --branch python/sample.py
   - coverage xml -o shippable/codecoverage/coverage.xml python/sample.py
+before_archive:
+  - echo "this is before archive command"
+  - ls
+  
+after_archive:
+  - echo "this is AFTER archive"
+  - echo "=========================="
 notifications:
   email:
     - exampleone@org.com
