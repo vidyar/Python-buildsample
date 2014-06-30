@@ -30,6 +30,8 @@ script:
 after_archive:
   - echo "this is AFTER archive"
   - echo "=========================="
+  - echo $SHIPPABLE_ARTIFACTS_URL
+  - echo $ARTIFACTS_UPLOAD_SUCCESSFUL
 notifications:
   email:
     - exampleone@org.com
