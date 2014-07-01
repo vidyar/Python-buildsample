@@ -20,6 +20,7 @@ before_script:
   - export BAZ=456
   - echo B---- $BAZ
   - echo F---- 
+  
 script:
   - echo $BLAH
   - echo B----- $BAZ
