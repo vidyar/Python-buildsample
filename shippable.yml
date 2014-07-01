@@ -8,6 +8,8 @@ before_install:
   - echo B----- $BAZ
   - echo F------ $FOO
   
+env:
+  - secure: tjvVXM6MBk48SzVS3i0DxVMr75yo/qMJm2pl2CXyWvJr5PfsnHYNYArY8nsi6mab9+5x2Th4vC3hn3hnOkRW7ui7KrXNxbQ2QELBvJywWUmfIkbpRlYlm31GNPA+2CQg/NS//Aaaq7HTC3RIIGFJnS0ZjNNXasC4qLs7rawMN6NygaJn6YGLg5ybXcCMM6Z0S8DDph9ZGH2mseY26dCcSQ5uCG0EmSMwu5+xaGvbzuNBuTnQaKNR9Qepm3aekeTQJJTNkUEtlwhL/EUJmvuA8VVZEteH5LHxKrytm35msoRx7lC0TxFwcZk+jp9Wdpqcq5CMWV8gaOAtcy619nyjuA==
 install:
   - echo B==== $BAZ
   - echo F==== $FOO
@@ -18,7 +20,9 @@ before_script:
   - echo B---- $BAZ
   - echo F---- 
   - for i in {1..10}; do echo BEFORE_SCRIPT ; sleep 1; done
-script: 
+script:
+  - echo $BLAH
+  - env
   - for i in {1..10}; do echo SCRIPT ; sleep 1; done
   - echo B----- $BAZ
   - echo F-- $FOO
