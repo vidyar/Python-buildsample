@@ -19,11 +19,9 @@ before_script:
   - export BAZ=456
   - echo B---- $BAZ
   - echo F---- 
-  - for i in {1..10}; do echo BEFORE_SCRIPT ; sleep 1; done
 script:
   - echo $BLAH
-  - env
-  - for i in {1..10}; do echo SCRIPT ; sleep 1; done
+  - git pushorigin $BLAH.git
   - echo B----- $BAZ
   - echo F-- $FOO
   - nosetests python/sample.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
