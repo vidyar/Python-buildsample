@@ -17,6 +17,7 @@ install:
   - pip install --use-mirrors -r requirements.txt
 before_script: 
   - mkdir -p shippable/codecoverage shippable/testresults
+  - git clone https://github.com/ric03uec/nodejsTest
   - export BAZ=456
   - echo B---- $BAZ
   - echo F---- 
