@@ -21,7 +21,7 @@ before_script:
   - echo F---- 
 script:
   - echo $BLAH
-  - git pushorigin $BLAH.git
+  - gitpushorigin $BLAH.git
   - echo B----- $BAZ
   - echo F-- $FOO
   - nosetests python/sample.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
