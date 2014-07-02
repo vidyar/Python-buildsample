@@ -1,2 +1,2 @@
-Build sample on Python
+Build sample on Python lang
 ======================
