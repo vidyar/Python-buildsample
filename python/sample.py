@@ -7,7 +7,7 @@ def my_partial_fn(x):       # line 1
     return y                #      4
 
 def IsEven(n):
-    if n % 2 == 0:
+    if n % 2 == 1:
         return True
     else: 
         return False
